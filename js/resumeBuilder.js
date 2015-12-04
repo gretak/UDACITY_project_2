@@ -1,12 +1,4 @@
 
-//var awsomethoughts = "I am awsome";
-//console.log(awsomethoughts);
-
-//var funthoughts = awsomethoughts.replace("awsome","fun");
-
-//$("#main").append(funthoughts);
-
-
 var bio = {
     "name" : "Greta Kavaliauskaite",
     "role":"Junior Developer",
@@ -117,7 +109,6 @@ for (var school in education.schools) {
     var formattedDates =  HTMLschoolDates.replace("%data%", education.schools[school].dates );
     var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
     var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-   // var formattedUrl = HTMLschoolUrl.replace("%data%", education.schools[school].url);
 
 
     $educationEntry.append( formattedName + formattedDegree);
@@ -135,7 +126,7 @@ for (var school in education.schools) {
     $educationOnlineClasses.append(formattedOnlineTitle+formattedOnlineSchool+formattedOnlineDates+formattedOnlineUrl);
     
     $('#education').append($educationOnlineClasses);
-    
+
 
 var projects = 
         {
@@ -179,7 +170,6 @@ var projects =
 
 
 
-
 var work = {
     "jobs": {
 
@@ -205,7 +195,7 @@ var work = {
 
 
 for (var job in work.jobs) {
-    console.log( job,  work.jobs[job]   );
+    console.log( job, work.jobs[job]);
 
     var $workEntry = $(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].name );
@@ -220,7 +210,6 @@ for (var job in work.jobs) {
     $('#workExperience').append($workEntry);
 
 }
-
 
 
 $("#mapDiv").append(googleMap);
