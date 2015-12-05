@@ -14,7 +14,7 @@ var bio = {
         "Communication", "Computer coding", "Teamwork", "Typing"
     ],
     "biopic":"images/my_picture.jpg"
-}
+};
 
 function inName(name) {
     name=bio.name.trim().split(" ");
@@ -22,7 +22,7 @@ function inName(name) {
     name[1]=name[1].toUpperCase();
     name[0]=name[0].slice(0,1).toUpperCase()+ name[0].slice(1).toLowerCase();
     return name[0]+" "+name[1];
-}
+};
 
 $('#main').append(internationalizeButton);
 
@@ -37,28 +37,23 @@ $("#header").prepend(formattedName);
 
 var mobile = bio.contacts.mobile;
 var formattedMobile = HTMLmobile.replace("%data%",mobile);
-$("#topContacts").append(formattedMobile);
-$("#footerContacts").append(formattedMobile);
+$("#topContacts, #footerContacts").append(formattedMobile);
 
 var email = bio.contacts.email;
 var formattedEmail = HTMLemail.replace("%data%",email);
-$("#topContacts").append(formattedEmail);
-$("#footerContacts").append(formattedEmail);
+$("#topContacts, #footerContacts").append(formattedEmail);
 
 var github = bio.contacts.github;
 var formattedGithub = HTMLgithub.replace("%data%",github);
-$("#topContacts").append(formattedGithub);
-$("#footerContacts").append(formattedGithub);
+$("#topContacts, #footerContacts").append(formattedGithub);
 
 var twitter = bio.contacts.twitter;
 var formattedtwitter = HTMLtwitter.replace("%data%",twitter);
-$("#topContacts").append(formattedtwitter);
-$("#footerContacts").append(formattedtwitter);
+$("#topContacts, #footerContacts").append(formattedtwitter);
 
 var mylocation = bio.contacts.location;
 var formattedlocation = HTMLlocation.replace("%data%",mylocation);
-$("#topContacts").append(formattedlocation);
-$("#footerContacts").append(formattedlocation);
+$("#topContacts,#footerContacts").append(formattedlocation);
 
 var biopic = bio.biopic;
 var formattedbiopic = HTMLbioPic.replace("%data%",biopic);
@@ -68,7 +63,7 @@ var welcomeMessage = bio.welcomeMessage;
 var formattedwelcomeMessage = HTMLwelcomeMsg.replace("%data%",welcomeMessage);
 $("#header").append(formattedwelcomeMessage);
 
-if(bio.skills.length>0){
+if(bio.skills.length){
 
     $("#header").append(HTMLskillsStart);
 
