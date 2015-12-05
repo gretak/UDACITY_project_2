@@ -9,12 +9,22 @@ var bio = {
         "twitter" : "gretakava",
         "location" : "London"
     },
-    "welcomeMsg": "Welcome to my CV! Take a look around and contact me if you have any questions or suggestions.",
+    "welcomeMessage": "Welcome to my CV! Take a look around and contact me if you have any questions or suggestions.",
     "skills": [
         "Communication", "Computer coding", "Teamwork", "Typing"
     ],
-    "bioPic":"images/my_picture.jpg"
+    "biopic":"images/my_picture.jpg"
 }
+
+function inName(name) {
+    name=bio.name.trim().split(" ");
+    console.log(name);
+    name[1]=name[1].toUpperCase();
+    name[0]=name[0].slice(0,1).toUpperCase()+ name[0].slice(1).toLowerCase();
+    return name[0]+" "+name[1];
+}
+
+$('#main').append(internationalizeButton);
 
 
 var role = bio.role;
@@ -50,13 +60,13 @@ var formattedlocation = HTMLlocation.replace("%data%",mylocation);
 $("#topContacts").append(formattedlocation);
 $("#footerContacts").append(formattedlocation);
 
-var bioPic = bio.bioPic;
-var formattedbioPic = HTMLbioPic.replace("%data%",bioPic);
-$("#header").append(formattedbioPic);
+var biopic = bio.biopic;
+var formattedbiopic = HTMLbioPic.replace("%data%",biopic);
+$("#header").append(formattedbiopic);
 
-var welcomeMsg = bio.welcomeMsg;
-var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",welcomeMsg);
-$("#header").append(formattedwelcomeMsg);
+var welcomeMessage = bio.welcomeMessage;
+var formattedwelcomeMessage = HTMLwelcomeMsg.replace("%data%",welcomeMessage);
+$("#header").append(formattedwelcomeMessage);
 
 if(bio.skills.length>0){
 
@@ -193,6 +203,7 @@ var work = {
 
 
 
+function displayWork(){
 
 for (var job in work.jobs) {
     console.log( job, work.jobs[job]);
@@ -210,9 +221,24 @@ for (var job in work.jobs) {
     $('#workExperience').append($workEntry);
 
 }
+}
+ displayWork();
+
+ function locationizer(work_obj) {
+    var locationArray = [];
+    for (job in work_obj.jobs){
+        var newLocation = work_obj.jobs[job].loction;
+        locationArray.push(newLocation);
+    }
+    return locationArray;
+ }
+
+ console.log(locationizer(work));
 
 
 $("#mapDiv").append(googleMap);
+
+
 
 
 
