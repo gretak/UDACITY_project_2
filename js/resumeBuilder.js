@@ -16,6 +16,8 @@ var bio = {
     "biopic":"images/my_picture.jpg"
 };
 
+function displayBio(){
+
 function inName(name) {
     name=bio.name.trim().split(" ");
     console.log(name);
@@ -25,7 +27,6 @@ function inName(name) {
 };
 
 $('#main').append(internationalizeButton);
-
 
 var role = bio.role;
 var formattedRole=HTMLheaderRole.replace("%data%",role);
@@ -73,7 +74,8 @@ if(bio.skills.length){
     }   );
 
 }
-
+};
+displayBio();
 
 
 var education = 
@@ -102,8 +104,9 @@ var education =
                 "dates" : "2015 - present",
                 "url": "http://udacity.com"
                 }
-    }
+    };
 
+function displayEducation(){
 
 for (var school in education.schools) {
     console.log( school,  education.schools[school]);
@@ -120,7 +123,7 @@ for (var school in education.schools) {
     $educationEntry.append( formattedDates + formattedLocation + formattedMajor);
 
     $('#education').append($educationEntry);
-}
+};
 
     var $educationOnlineClasses = $(HTMLonlineClasses);
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlinecourses.title);
@@ -131,7 +134,8 @@ for (var school in education.schools) {
     $educationOnlineClasses.append(formattedOnlineTitle+formattedOnlineSchool+formattedOnlineDates+formattedOnlineUrl);
     
     $('#education').append($educationOnlineClasses);
-
+};
+displayEducation();
 
 var projects = 
         {
@@ -152,7 +156,8 @@ var projects =
         }
 
     }
-}
+};
+function displayProjects(){
 
     for (var pro in projects.project) {
     console.log( pro,  projects.project[pro]);
@@ -170,8 +175,9 @@ var projects =
     $projectEntry.append(formattedTitle + formattedDate + formattedDescription + formattedPictures);
     
     $('#projects').append($projectEntry);
-
 }
+};
+ displayProjects();
 
 
 
@@ -193,7 +199,7 @@ var work = {
             "description": "Creating and editing web pages in Sitecore CMS. Updating and optimising Bupa's website to meet the latest requirements. Ensure PDFs are labelled correctly, have appropriate file sizes, and are tagged for accessibility. Work through accessibility and usability issues via Active Standards to ensure the Bupa websites meet appropriate standards of accreditation. Assist with User Acceptance Testing of new projects, comparing developments against requirements."
         }
     }
-}
+};
 
 
 
@@ -216,7 +222,7 @@ for (var job in work.jobs) {
     $('#workExperience').append($workEntry);
 
 }
-}
+};
  displayWork();
 
  function locationizer(work_obj) {
@@ -226,7 +232,7 @@ for (var job in work.jobs) {
         locationArray.push(newLocation);
     }
     return locationArray;
- }
+ };
 
  console.log(locationizer(work));
 
