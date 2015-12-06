@@ -16,8 +16,6 @@ var bio = {
     "biopic":"images/my_picture.jpg"
 };
 
-function displayBio(){
-
 function inName(name) {
     name=bio.name.trim().split(" ");
     console.log(name);
@@ -28,6 +26,9 @@ function inName(name) {
 
 $('#main').append(internationalizeButton);
 
+
+function displayBio(){
+    
 var role = bio.role;
 var formattedRole=HTMLheaderRole.replace("%data%",role);
 $("#header").prepend(formattedRole);
@@ -80,24 +81,20 @@ displayBio();
 
 var education = 
         {
-        "schools":{
-        "recent school": 
-        {
+        "schools":[{
                 "name" : "Ravensbourne",
                 "location" : "North Greenwich, London",
                 "degree" : "level 3",
                 "dates": "2013 - 2015",
                 "major": "Design and Media"
         },
-        "previous school":
         {
                 "name" : "Siauliai University",
                 "location" : "Siauliai, Lithuania",
                 "degree" : "Bachelor",
                 "dates": "2007 - 2011",
                 "major": "Business Administration and Management"
-        }
-    },
+        }],
     "onlinecourses":{
                 "title" : "Front-end developer course",
                 "school" : "Udacity",
@@ -139,23 +136,19 @@ displayEducation();
 
 var projects = 
         {
-        "project":{
-        "project 1": 
-        {
-                "title" : "HTML EMAILS",
+        "project":[{
+               "title" : "HTML EMAILS",
                 "dates": "2015 July",
                 "description": "HTML responsive emails are used for advertising, marketing and promotional compains. This email is coded with html and css. Coding html email could be dificult because of the inline styles and table properties. Premailer, responsive email design tutorials and online images uploader helped me to sort this out. This email is created for all the devices and email software like outlook, gmail and others.",
-                "projectPic":["images/emails.jpg"]
+                "images":["images/emails.jpg"]
         },
-        "project 2":
         {
                 "title" : "GAME SILLY-SENTENCESS",
                 "dates": "2015 May",
                 "description": "This game was my final major project for Codezoners apprenticeship at Ravensbourne. Contains responsive image and d3.js object. Python was used for back-end programing.",
-                "projectPic":["images/game.jpg","images/game2.jpg"]
-        }
+                "images":["images/game.jpg","images/game2.jpg"]
+        }]
 
-    }
 };
 function displayProjects(){
 
@@ -167,7 +160,7 @@ function displayProjects(){
     var formattedDate = HTMLprojectDates.replace("%data%", projects.project[pro].dates );
     var formattedDescription =  HTMLprojectDescription.replace("%data%", projects.project[pro].description );
     var formattedPictures="";
-    projects.project[pro].projectPic.forEach(function(item){
+    projects.project[pro].images.forEach(function(item){
     formattedPictures += HTMLprojectImage.replace("%data%", item);
 
     });
@@ -182,23 +175,20 @@ function displayProjects(){
 
 
 var work = {
-    "jobs": {
-
-        "recent job": {
+    "jobs": [{
             "name" : "Cohaesus",
             "title" : "Junior Developer",
             "dates": "2015 - Present",
             "location" : "London, UK",
             "description": "Supporting development team. Participating in live projects, helping with BAU and other tasks."
         },
-        "second job":{
+        {
             "name" : "BUPA",
             "title" : "Content Editor",
             "dates": "January, 2014 - February 2015",
             "location" : "London, UK",
             "description": "Creating and editing web pages in Sitecore CMS. Updating and optimising Bupa's website to meet the latest requirements. Ensure PDFs are labelled correctly, have appropriate file sizes, and are tagged for accessibility. Work through accessibility and usability issues via Active Standards to ensure the Bupa websites meet appropriate standards of accreditation. Assist with User Acceptance Testing of new projects, comparing developments against requirements."
-        }
-    }
+        }]
 };
 
 
