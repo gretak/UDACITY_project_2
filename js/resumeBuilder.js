@@ -27,7 +27,7 @@ function inName(name) {
 $('#main').append(internationalizeButton);
 
 
-function displayBio(){
+bio.display = function(){
     
 var role = bio.role;
 var formattedRole=HTMLheaderRole.replace("%data%",role);
@@ -76,7 +76,7 @@ if(bio.skills.length){
 
 }
 }
-displayBio();
+bio.display();
 
 
 var education = 
@@ -103,7 +103,7 @@ var education =
                 }
     };
 
-function displayEducation(){
+education.display = function(){
 
 for (var school in education.schools) {
     console.log( school,  education.schools[school]);
@@ -132,7 +132,7 @@ for (var school in education.schools) {
     
     $('#education').append($educationOnlineClasses);
 }
-displayEducation();
+education.display();
 
 var projects = 
         {
@@ -150,7 +150,7 @@ var projects =
         }]
 
 };
-function displayProjects(){
+projects.display = function(){
 
     for (var pro in projects.project) {
     console.log( pro,  projects.project[pro]);
@@ -170,7 +170,7 @@ function displayProjects(){
     $('#projects').append($projectEntry);
 }
 }
- displayProjects();
+ projects.display();
 
 
 
@@ -194,7 +194,7 @@ var work = {
 
 
 
-function displayWork(){
+work.display = function(){
 
 for (var job in work.jobs) {
     console.log( job, work.jobs[job]);
@@ -213,7 +213,7 @@ for (var job in work.jobs) {
 
 }
 }
- displayWork();
+ work.display();
 
  function locationizer(work_obj) {
     var locationArray = [];
