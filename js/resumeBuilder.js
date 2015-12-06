@@ -22,7 +22,7 @@ function inName(name) {
     name[1]=name[1].toUpperCase();
     name[0]=name[0].slice(0,1).toUpperCase()+ name[0].slice(1).toLowerCase();
     return name[0]+" "+name[1];
-};
+}
 
 $('#main').append(internationalizeButton);
 
@@ -75,7 +75,7 @@ if(bio.skills.length){
     }   );
 
 }
-};
+}
 displayBio();
 
 
@@ -120,7 +120,7 @@ for (var school in education.schools) {
     $educationEntry.append( formattedDates + formattedLocation + formattedMajor);
 
     $('#education').append($educationEntry);
-};
+}
 
     var $educationOnlineClasses = $(HTMLonlineClasses);
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlinecourses.title);
@@ -131,7 +131,7 @@ for (var school in education.schools) {
     $educationOnlineClasses.append(formattedOnlineTitle+formattedOnlineSchool+formattedOnlineDates+formattedOnlineUrl);
     
     $('#education').append($educationOnlineClasses);
-};
+}
 displayEducation();
 
 var projects = 
@@ -169,7 +169,7 @@ function displayProjects(){
     
     $('#projects').append($projectEntry);
 }
-};
+}
  displayProjects();
 
 
@@ -212,7 +212,7 @@ for (var job in work.jobs) {
     $('#workExperience').append($workEntry);
 
 }
-};
+}
  displayWork();
 
  function locationizer(work_obj) {
@@ -222,7 +222,7 @@ for (var job in work.jobs) {
         locationArray.push(newLocation);
     }
     return locationArray;
- };
+ }
 
  console.log(locationizer(work));
 
